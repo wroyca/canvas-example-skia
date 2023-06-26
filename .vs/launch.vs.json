@@ -1,0 +1,15 @@
+{
+  "version": "0.2.1",
+  "defaults": {},
+  "configurations": [
+    {
+      "inheritEnvironments": [
+        "${cpp.activeConfiguration}"
+      ],
+      "name": "canvas",
+      "type": "default",
+      "project": "canvas\\canvas.exe",
+      "workingDirectory": "${workspaceRoot}"
+    }
+  ]
+}

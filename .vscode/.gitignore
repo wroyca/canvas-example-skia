@@ -1,0 +1,6 @@
+*
+!.gitignore
+
+# Local default settings files.
+#
+!settings.json

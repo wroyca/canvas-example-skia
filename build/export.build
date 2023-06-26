@@ -1,0 +1,23 @@
+if ($import.target == exe{canvas})
+{
+  $out_root/
+  {
+    include canvas/
+  }
+
+  export $out_root/canvas/exe{canvas}
+}
+else
+{
+  $out_root/
+  {
+    include libcanvas/
+  }
+
+  d = [dir_path] $out_root/libcanvas/
+
+  if ($name($import.target) != 'canvas')
+    d += $regex.replace($name($import.target), '^canvas-(.+)', '\1')
+
+  export $d/$import.target
+}

@@ -1,0 +1,6 @@
+config.version = 1
+
+config.cxx = cl /MDd
+config.c = cl /MDd
+config.cc.coptions = /Od /Zi /fsanitize=address
+config.cc.loptions = /DEBUG

@@ -2,4 +2,4 @@ config.version = 1
 
 config.cxx = cl /MD
 config.c = cl /MD
-config.cc.coptions = /O2 /DNDEBUG /fsanitize=address
+config.cc.coptions = /O2 /DNDEBUG

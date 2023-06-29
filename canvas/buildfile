@@ -1,6 +1,31 @@
 libs =
 import libs += lib{canvas}
+import libs += skia%lib{skia.dll}
+import libs += gddi32%lib{gdi32}
+import libs += opengl32%lib{opengl32}
+
 
 exe{canvas}: {hxx ixx txx cxx}{**} $libs testscript
 
 cxx.poptions =+ "-I$out_root" "-I$src_root"
+
+
+if ($cxx.target.class == 'windows')
+{
+  cxx.poptions += "-DUNICODE"  \
+                  "-D_UNICODE" \
+                  "-DNOMINMAX" \
+                  "-DWIN32_LEAN_AND_MEAN"
+
+  # Skia is currently imported from vcpkg.
+  #
+  #   .\vcpkg\vcpkg install skia:x64-windows
+  #
+  # It is on our to-do list to relocate it to our build configuration and
+  # investigate installing it using bdep --pre-hook mechanism.
+  #
+  cxx.poptions += "-DSK_GL"
+  cxx.poptions += "-IC:/vcpkg/packages/skia_x64-windows/include"
+  cxx.poptions += "-IC:/vcpkg/packages/skia_x64-windows/include/skia"
+  cxx.loptions += "-LIBPATH:C:/vcpkg/packages/skia_x64-windows/lib"
+}

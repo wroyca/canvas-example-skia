@@ -8,13 +8,15 @@
       "includePath": [
         "${env.INCLUDE}",
         "${workspaceRoot}\\**",
-        "${workspaceRoot}\\..\\canvas-msvc\\**"
+        "${workspaceRoot}\\..\\canvas-msvc\\**",
+        "C:\\vcpkg\\packages\\skia_x64-windows\\include\\**"
       ],
       "defines": [
         "WIN32",
         "_DEBUG",
         "UNICODE",
-        "_UNICODE"
+        "_UNICODE",
+        "SK_GL"
       ],
       "intelliSenseMode": "windows-msvc-x64",
       "compilerSwitches": "/std:c++latest"
@@ -27,13 +29,15 @@
       "includePath": [
         "${env.INCLUDE}",
         "${workspaceRoot}\\**",
-        "${workspaceRoot}\\..\\canvas-msvc\\**"
+        "${workspaceRoot}\\..\\canvas-msvc\\**",
+        "C:\\vcpkg\\packages\\skia_x64-windows\\include\\**"
       ],
       "defines": [
         "WIN32",
         "NDEBUG",
         "UNICODE",
-        "_UNICODE"
+        "_UNICODE",
+        "SK_GL"
       ],
       "intelliSenseMode": "windows-msvc-x64",
       "compilerSwitches": "/std:c++latest"
